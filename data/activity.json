@@ -1,0 +1,6 @@
+[
+  {"id": 1, "actor": "You", "action": "shipped an update to", "target": "Signal Metrics", "detail": "Analytics API · v1.4.2", "time": "12 min ago", "icon": "↗", "tone": "orange"},
+  {"id": 2, "actor": "Atlas Workspace", "action": "completed its", "target": "design review", "detail": "Milestone · Sprint 08", "time": "1 hour ago", "icon": "✳", "tone": "violet"},
+  {"id": 3, "actor": "You", "action": "added a new", "target": "Fieldnotes collection", "detail": "Research · 12 entries", "time": "Yesterday", "icon": "＋", "tone": "green"},
+  {"id": 4, "actor": "Commons API", "action": "reached", "target": "10k requests", "detail": "Milestone · All systems healthy", "time": "Yesterday", "icon": "◎", "tone": "blue"}
+]

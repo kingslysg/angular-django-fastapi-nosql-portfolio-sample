@@ -10,7 +10,7 @@
 
 | Layer | Technology | Role in the sample |
 | --- | --- | --- |
-| User interface | AngularJS 1.8 | Responsive portfolio dashboard, project cards, search, filters, activity feed, and KPI presentation |
+| User interface | AngularJS 1.8 + TypeScript | Responsive portfolio dashboard, project cards, search, filters, activity feed, and KPI presentation |
 | GraphQL client | Apollo Client 3 | Sends the dashboard query and updates the UI with the combined response |
 | GraphQL gateway | Strawberry GraphQL | Provides one typed GraphQL endpoint and composes data from backend services |
 | Project API | Django REST Framework | Serves curated project and portfolio content |
@@ -35,6 +35,8 @@
 - **MongoDB (optional):** use a local service or Docker only if you want FastAPI to read event documents from MongoDB. The JSON fixture works without it.
 
 The UI-only demo needs Python and a browser. The complete demo installs Python packages separately in the service virtual environments described below.
+
+The dashboard logic is maintained in `frontend/app.ts` and compiled to `frontend/app.js`, which the page loads directly. The compiled file is committed, so the UI-only demo does not require Node.js. To rebuild after editing the TypeScript source, run `npm install` and `npm run build` from `frontend/`.
 
 ## Open and navigate the project
 
@@ -116,6 +118,8 @@ python3 -m http.server 5173 --directory frontend
 ```
 
 Open **http://localhost:5173**. Leave the terminal running while using the page; press **Ctrl+C** to stop it.
+
+After completing the service setup below, `./scripts/run-demo.sh ui`, `./scripts/run-demo.sh django`, `./scripts/run-demo.sh fastapi`, and `./scripts/run-demo.sh graphql` start the corresponding service with the documented ports.
 
 ## Run the complete demo
 

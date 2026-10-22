@@ -3,6 +3,9 @@
 __pycache__/
 *.py[cod]
 
+# Frontend build dependencies
+node_modules/
+
 # Local Django database
 *.sqlite3
 

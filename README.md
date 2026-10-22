@@ -14,7 +14,7 @@
 | GraphQL client | Apollo Client 3 | Sends the dashboard query and updates the UI with the combined response |
 | GraphQL gateway | Strawberry GraphQL | Provides one typed GraphQL endpoint and composes data from backend services |
 | Project API | Django REST Framework | Serves curated project and portfolio content |
-| Analytics API | FastAPI | Serves KPI summaries and activity data |
+| Analytics API | FastAPI | Serves KPI summaries, validated activity records, filters, and pagination |
 | NoSQL data | MongoDB | Optional document store for flexible activity/event records |
 | Local demo data | JSON | Supplies sample activity when MongoDB is not configured |
 
@@ -163,6 +163,8 @@ python3 -m uvicorn main:app --reload --port 8001
 ```
 
 The interactive API docs are at **http://localhost:8001/docs**. Health check: **http://localhost:8001/health/**.
+
+Activity records support optional `limit`, `offset`, `actor`, `tone`, and `search` query parameters at **http://localhost:8001/api/analytics/activity**. Aggregate event counts are available at **http://localhost:8001/api/analytics/activity/summary**, and matching activity can be exported as CSV at **http://localhost:8001/api/analytics/activity/export**. If a configured MongoDB server is unavailable, the service logs the issue and serves the bundled JSON fixture instead.
 
 ### Terminal 4 — Strawberry GraphQL gateway
 

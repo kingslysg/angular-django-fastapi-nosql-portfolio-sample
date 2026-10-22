@@ -198,6 +198,15 @@ python3 -m uvicorn main:app --reload --port 8001
 
 The demo reads the `activity` collection. If it is empty, the activity endpoint returns an empty list.
 
+### FastAPI Python tests
+
+From the repository root, install the service's test dependencies and run the suite:
+
+```bash
+python3 -m pip install -r backend/fastapi_service/requirements-dev.txt
+python3 -m pytest backend/fastapi_service/tests
+```
+
 ## Connect the UI to the APIs
 
 By default, the page uses its local dummy data. To make the page query the running GraphQL gateway, edit `frontend/index.html` and change:
